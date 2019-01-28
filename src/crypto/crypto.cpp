@@ -1,8 +1,12 @@
 // Copyright (c) 2012-2013 The Cryptonote developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__DragonFly__)
+ #include <alloca.h>
+#else
+ #include <stdlib.h>
+#endif
 
-#include <alloca.h>
 #include <cassert>
 #include <cstddef>
 #include <cstdint>

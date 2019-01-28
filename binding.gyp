@@ -16,19 +16,21 @@
             "include_dirs": [
                 "src",
                 "src/contrib/epee/include",
+                "/usr/local/include",
                 "<!(node -e \"require('nan')\")",
             ],
             "link_settings": {
                 "libraries": [
+                    "-L/usr/local/lib",
                     "-lboost_system",
                     "-lboost_date_time",
                 ]
             },
             "cflags_c":  [
-                "-fno-exceptions -std=gnu11 -march=native -fPIC -DNDEBUG -Ofast -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
+                "-fno-exceptions -std=gnu11 -march=native -fPIC -DNDEBUG -maes -Ofast -funroll-loops -fvariable-expansion-in-unroller -fmerge-all-constants"
             ],
             "cflags_cc": [
-                "-fexceptions -frtti -std=gnu++11 -march=native -fPIC -DNDEBUG -Ofast -s -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
+                "-fexceptions -frtti -std=gnu++11 -march=native -fPIC -DNDEBUG -maes -Ofast -s -funroll-loops -fvariable-expansion-in-unroller  -fmerge-all-constants"
             ],
             "xcode_settings": {
                 "OTHER_CFLAGS": [ "-fexceptions -frtti" ]
